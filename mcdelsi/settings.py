@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('MCDELSI_SECRET_KEY', '')
 DEBUG = True if os.environ.get('MCDELSI_DEBUG', None) == 'true' else False
 
 ALLOWED_HOSTS = ['www.mcdelsi.com',]
-
+SITE_ID = 1
 
 # Application definition
 
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'robots',
 ]
 
 MIDDLEWARE_CLASSES = [
