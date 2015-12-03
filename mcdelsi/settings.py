@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,12 +77,31 @@ WSGI_APPLICATION = 'mcdelsi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+if os.environ.get('MCDELSI_RUNLOCAL',None):
+    db_engine = os.environ.get('MCDELSI_DB_ENGINE','django.db.backends.postgresql')
+    db_name = os.environ.get('MCDELSI_DB_NAME','nycbbl')
+    db_user = os.environ.get('MCDELSI_DB_USER','')
+    db_password = os.environ.get('MCDELSI_DB_PASSWORD','')
+    db_host = os.environ.get('MCDELSI_DB_HOST', '')
+    DATABASES = {
+        'default': {
+            'ENGINE':db_engine,
+            'NAME':db_name,
+            'USER':db_user,
+            'PASSWORD':db_password,
+            'HOST': db_host,
+            'PORT':'',
+        }
     }
-}
+else:
+    DATABASES['default'] =  dj_database_url.config()
+
 
 
 # Password validation
