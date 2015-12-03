@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block base_body %}
+  <div class="container">
+    <div class="row">
+      <div>
+        <h3>Complete Checkout</h3>
+        <ul>
+          {% for chubbie in chubbies %}
+            <li>
+              <a href="/product/{{ chubbie.slug }}/">{{ chubbie.name }}
+                <img class="chubbie_home_image" src="{% static chubbie.image %}"/>
+              </a>
+            </li>
+            <a href="/deleted/{{ chubbie.slug }}/">Remove from Cart</a>
+          {% endfor %}
+        </ul>
+        <a href="/order-confirmation/">Complete Order</a>
+      </div>
+    </div>
+  </div>
+{% endblock base_body %}

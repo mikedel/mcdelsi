@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from chubbies.models import *
 
@@ -16,15 +16,53 @@ def category(request, category):
     })
 
 def product(request, product):
-    chubbie = Chubbie.objects.get(name=product)
+    chubbie = Chubbie.objects.get(slug=product)
     return render(request, 'product.html', {
             'chubbie': chubbie,
     })
 
 def added(request, product):
-    if request.session.get('chubbies', ''):
+    if request.session.get('chubbies', []):
         request.session['chubbies'].append(product)
         request.session.modified = True
     else:
         request.session['chubbies'] = [product]
-    return HttpResponse("added to cart" + product + " Session: " + str(request.session.get('chubbies', '')))
+    return redirect('/cart/')
+
+def deleted(request, product):
+    if request.session.get('chubbies', []):
+        request.session['chubbies'].remove(product)
+        request.session.modified = True
+    else:
+        request.session['chubbies'] = []
+    return redirect('/cart/')
+
+def cart(request):
+    slugs = request.session.get('chubbies', [])
+    chubbies = []
+    for slug in slugs:
+        chubbies.append(Chubbie.objects.get(slug=slug))
+    return render(request, 'cart.html', {
+            'chubbies': chubbies,
+    })
+
+def checkout(request):
+    slugs = request.session.get('chubbies', [])
+    chubbies = []
+    for slug in slugs:
+        chubbies.append(Chubbie.objects.get(slug=slug))
+    return render(request, 'checkout.html', {
+            'chubbies': chubbies,
+    })
+
+def order_confirmation(request):
+    slugs = request.session.get('chubbies', [])
+    chubbies = []
+    for slug in slugs:
+        chubbies.append(Chubbie.objects.get(slug=slug))
+    if slugs:
+        request.session['chubbies'] = []
+        request.session.modified = True
+    return render(request, 'order_confirmation.html', {
+            'chubbies': chubbies,
+    })

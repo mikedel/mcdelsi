@@ -5,5 +5,5 @@
     {{ chubbie.name }}
     {{ chubbie.price }}
     <img class="chubbie_home_image" src="{% static chubbie.image %}"/>
-    <a href="/added/{{ chubbie.name }}/">Add to Cart</a>
+    <a href="/added/{{ chubbie.slug }}/">Add to Cart</a>
 {% endblock base_body %}
