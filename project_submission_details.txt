@@ -1,0 +1,46 @@
+Individual Project Submission
+Submit Assignment
+Due Thursday by 11:59pm  Points 100  Submitting a file upload  Available Nov 30 at 12am - Dec 3 at 11:59pm 4 days
+Project submission due date is end of day Thursday, December 3rd (at midnight)
+The grader will be grading it on Friday, December 4th between 8:30AM and 3:30PM - this is when you'll need to have your AdWords campaign enabled for.
+The grader will be grading from Jersey City, NJ location.
+
+
+Background
+
+Mock eCommerce site
+Hosted at provider of your choice under your registered URL
+You Must Submit:
+
+Home page URL
+Reporting (Google Analytics) screenshot
+SEO keyword(s) – Natural Search – your site needs to show up within first 2 pages
+SEM keyword(s) - Paid search campaign (Google AdWords) – your site ads need to show up after the maximum of 5 page refreshes (either on top or on the right hand side of the page)
+A/B testing description as per A/B testing homework
+Your website Must have:
+
+Home page
+Category page
+Product page
+Shopping Cart page
+Checkout page
+Order confirmation page
+A/B testing
+Reporting (Google Analytics)
+SEO
+SEM - Paid search campaign (Google AdWords)
+
+
+How Project Will Be Graded
+
+on Friday, December 4th between 8:30AM and 3:30PM the grader will:
+
+1.Go to google.com in an anonymous (Incognito) browser and enter site’s SEM (paid ads via AdWords) keywords. Graded site should come up in a list of ads after at most 5 tries / page refreshes. Hint: write some content for (and then purchase) a combination of keywords which are unique enough to cost little but not too obscure to avoid not having enough traffic to them. Hint: clear cache & cookies and then use a separate incognito browser window to simulate new users.
+
+2.Go to google.com in another anonymous (Incognito) browser and enter your site’s presence on first 2 pages of natural search (SEO). Hint: clear cache & cookies and then use a separate incognito browser window to simulate new users.
+
+3.Browse to your site and go through Home->Category->Product->Shopping cart->Checkout->order confirmation flow.
+
+4.Check for Google Analytics (screenshot)
+
+5.Check for A/B testing. Hint: clear cache & cookies and then use a separate incognito browser window to simulate new users.

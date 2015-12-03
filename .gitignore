@@ -60,3 +60,4 @@ target/
 # My Stuff
 environment.sh
 local.sh
+db.sqlite3
