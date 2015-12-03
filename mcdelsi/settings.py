@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'mcdelsi.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+DATABASES = {}
 if os.environ.get('MCDELSI_RUNLOCAL',None):
     db_engine = os.environ.get('MCDELSI_DB_ENGINE','django.db.backends.postgresql')
     db_name = os.environ.get('MCDELSI_DB_NAME','nycbbl')
