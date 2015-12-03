@@ -8,3 +8,4 @@ class Chubbie(models.Model):
     category = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.CharField(max_length=250)
+    slug = models.SlugField(unique=True)

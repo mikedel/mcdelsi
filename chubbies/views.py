@@ -14,3 +14,17 @@ def category(request, category):
     return render(request, 'category.html', {
             'chubbies': chubbies,
     })
+
+def product(request, product):
+    chubbie = Chubbie.objects.get(name=product)
+    return render(request, 'product.html', {
+            'chubbie': chubbie,
+    })
+
+def added(request, product):
+    if request.session.get('chubbies', ''):
+        request.session['chubbies'].append(product)
+        request.session.modified = True
+    else:
+        request.session['chubbies'] = [product]
+    return HttpResponse("added to cart" + product + " Session: " + str(request.session.get('chubbies', '')))
