@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '65kit$xd$53hbm9%$*o4@+&nmdkfyb%^+pdz24wekwb9&_(fh@'
+SECRET_KEY = os.environ.get('MCDELSI_SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.environ.get('MCDELSI_DEBUG', None) == 'true' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.mcdelsi.com',]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
