@@ -66,3 +66,4 @@ def order_confirmation(request):
     return render(request, 'order_confirmation.html', {
             'chubbies': chubbies,
     })
+

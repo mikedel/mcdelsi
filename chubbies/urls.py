@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from . import views
 from django.contrib.sitemaps.views import sitemap
 from mcdelsi.sitemap import *
+from django.http import HttpResponse
 
 sitemaps = {'static': StaticViewSitemap, 'product': ProductSitemap}
 
@@ -14,5 +15,6 @@ urlpatterns = [
     url(r'^cart/$', views.cart, name='cart'),
     url(r'^checkout/$', views.checkout, name='checkout'),
     url(r'^order-confirmation/$', views.order_confirmation, name='order_confirmation'),
-    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: ")),
 ]

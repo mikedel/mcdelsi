@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'django.contrib.sitemaps',
     'django.contrib.sites',
-    'robots',
 ]
 
 MIDDLEWARE_CLASSES = [
