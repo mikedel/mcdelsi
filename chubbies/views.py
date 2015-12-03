@@ -8,7 +8,9 @@ def index(request):
     return render(request, 'base.html', {
             'chubbies': chubbies,
     })
-    return HttpResponse("Hello, world. You're at Mcdelsi Used Chubbies.")
 
 def category(request, category):
-    return HttpResponse("Category " + category)
+    chubbies = Chubbie.objects.filter(category=category)
+    return render(request, 'category.html', {
+            'chubbies': chubbies,
+    })
