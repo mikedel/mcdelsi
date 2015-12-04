@@ -11,10 +11,11 @@
               <a href="/product/{{ chubbie.slug }}/">{{ chubbie.name }}
                 <img class="chubbie_home_image" src="{% static chubbie.image %}"/>
               </a>
+              {{ chubbie.price }}
             </li>
-            <a href="/deleted/{{ chubbie.slug }}/">Remove from Cart</a>
           {% endfor %}
         </ul>
+        <p>Total: {{ total }}</p>
         <a href="/order-confirmation/">Complete Order</a>
       </div>
     </div>

@@ -1,2 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+
+{% block jumbotron %}
+  <h1>Category: {{ category }}</h1>
+  <p>Welcome to our categories page.  You can change categories using the menu bar.</p>
+{% endblock jumbotron %}

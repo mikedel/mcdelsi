@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-          <a class="navbar-brand" href="">Mcdelsi Used Chubbies</a>
+          <a class="navbar-brand" href="/">Mcdelsi Used Chubbies</a>
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="/category/standard/">Standard Used Chubbies</a></li>
@@ -54,11 +54,11 @@
   {% block base_body %}
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome to Mcdelsi Used Chubbies</h1>
-        <p>The top source for all of your used Chubbies.  Second hand Chubbies at a discount price.</p>
-        <p>
-          <a class="btn btn-primary btn-lg">Try it free</a>
-        </p>
+        {% block jumbotron %}
+          <h1>Welcome to Mcdelsi Used Chubbies</h1>
+          <p>The top source for all of your used Chubbies.  Second hand Chubbies at a discount price.</p>
+          <p>"All of a man's power comes from his thighs" - John Stamos</p>
+        {% endblock jumbotron %}
       </div>
     </div>
     <div class="container">
@@ -75,26 +75,11 @@
             {% endfor %}
           </ul>
         </div>
-        {% comment %}
-        <div class="col-md-6">
-          <h3>Bro(wse) Top TV Reviews</h3>
-          <ul>
-           <li><a href="#">Always Sunny In Philidelphia</a></li>
-           <li><a href="#">The League</a></li>
-           <li><a href="#">Narcos</a></li>
-           <li><a href="#">Marco</a></li>
-           <li><a href="#">iZombie</a></li>
-           <li><a href="#">Blue Mountain State</a></li>
-           <li><a href="#">The Walking Dead</a></li>
-           <li><a href="#">Survivor</a></li>
-          </ul>
-        </div>
-        {% endcomment %}
       </div>
     </div>
     <div class="jumbotron">
       <div class="container">
-        <h2>What else?</h2>
+        <h2>Let your thighs breath a sigh of relief.</h2>
 
       </div>
     </div>

@@ -13,6 +13,7 @@ def category(request, category):
     chubbies = Chubbie.objects.filter(category=category)
     return render(request, 'category.html', {
             'chubbies': chubbies,
+            'category': category,
     })
 
 def product(request, product):
@@ -40,19 +41,27 @@ def deleted(request, product):
 def cart(request):
     slugs = request.session.get('chubbies', [])
     chubbies = []
+    total = 0.0
     for slug in slugs:
-        chubbies.append(Chubbie.objects.get(slug=slug))
+        chubbie = Chubbie.objects.get(slug=slug)
+        chubbies.append(chubbie)
+        total += float(chubbie.price)
     return render(request, 'cart.html', {
             'chubbies': chubbies,
+            'total': total,
     })
 
 def checkout(request):
     slugs = request.session.get('chubbies', [])
     chubbies = []
+    total = 0.0
     for slug in slugs:
-        chubbies.append(Chubbie.objects.get(slug=slug))
+        chubbie = Chubbie.objects.get(slug=slug)
+        chubbies.append(chubbie)
+        total += float(chubbie.price)
     return render(request, 'checkout.html', {
             'chubbies': chubbies,
+            'total': total,
     })
 
 def order_confirmation(request):
